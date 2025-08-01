@@ -62,17 +62,23 @@ class TemperatureAnalyzer{ // This should be default modifier
 
 		if (day1TempWrapper.compareTo(day2TempWrapper) == 0) // error if not enclosed in ()
 		{
-			System.out.println("Day 1 (" + day1TempPrimitive + "°C) was the same temperature as Day 2 (" + day2TempPrimitive + "°C).");
+			System.out.println("Day 1 (" + day1TempPrimitive + "°C) was the same temperature as Day 2 (" + day2TempPrimitive + "°C).\n");
 		} else if (day1TempWrapper.compareTo(day2TempWrapper) < 0){
-			System.out.println("Day 1 (" + day1TempPrimitive + "°C) was cooler than Day 2 (" + day2TempPrimitive + "°C).");
+			System.out.println("Day 1 (" + day1TempPrimitive + "°C) was cooler than Day 2 (" + day2TempPrimitive + "°C).\n");
 		} else {
-			System.out.println("Day 1 (" + day1TempPrimitive + "°C) was warmer than Day 2 (" + day2TempPrimitive + "°C).");
+			System.out.println("Day 1 (" + day1TempPrimitive + "°C) was warmer than Day 2 (" + day2TempPrimitive + "°C).\n");
 		}
 		/*
 		compareTo() returns a negative integer if the calling object (day1TempWrapper) is less than the argument (day2TempWrapper).
 		compareTo() returns zero if the calling object is equal to the argument.
 		compareTo() returns a positive integer if the calling object is greater than the argument.
 		*/
+
+		float day1Float = day1TempWrapper.floatValue();
+		int day2Int = day2TempWrapper.intValue();
+
+		System.out.println("Extracted Day 1 Temp (primitive float from Double wrapper): " + day1Float);
+		System.out.println("Extracted Day 2 Temp (primitive int from Double wrapper, truncated): " + day2Int + "\n");
 
 	} 
 
