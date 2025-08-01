@@ -37,7 +37,7 @@ class TemperatureAnalyzer{ // This should be default modifier
 		} catch (NumberFormatException e) {
     		System.err.println("Error: Invalid input for Day 2 temperature. Default temperature will be used.");
     		// Setting a default value
-    		day1TempPrimitive = 20.0;
+    		day2TempPrimitive = 20.0;
 		}
 
 		try {
@@ -45,10 +45,11 @@ class TemperatureAnalyzer{ // This should be default modifier
 		} catch (NumberFormatException e) {
     		System.err.println("Error: Invalid input for Day 3 temperature. Default temperature will be used.");
     		// Setting a default value
-    		day1TempPrimitive = 20.0;
+    		day3TempPrimitive = 20.0;
 		}
 
-		
+
+
 
 
 
