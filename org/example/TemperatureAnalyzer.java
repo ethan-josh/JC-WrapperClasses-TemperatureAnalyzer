@@ -27,7 +27,7 @@ class TemperatureAnalyzer{ // This should be default modifier
 			*/
 			// System.out.println(day1TempWrapper); // debug
 		} catch (NumberFormatException e) {
-    		System.err.println("Error: Invalid input for Day 1 temperature. Default temperature will be used.");
+    		System.err.println("Error: Invalid input for Day 1 temperature. Default temperature will be used.\n");
     		// Setting a default value
     		day1TempPrimitive = 20.0;
 		}
@@ -35,7 +35,7 @@ class TemperatureAnalyzer{ // This should be default modifier
 		try {
     		day2TempPrimitive = Double.parseDouble(day2TempStr);
 		} catch (NumberFormatException e) {
-    		System.err.println("Error: Invalid input for Day 2 temperature. Default temperature will be used.");
+    		System.err.println("Error: Invalid input for Day 2 temperature. Default temperature will be used.\n");
     		// Setting a default value
     		day2TempPrimitive = 20.0;
 		}
@@ -43,7 +43,7 @@ class TemperatureAnalyzer{ // This should be default modifier
 		try {
     		day3TempPrimitive = Double.parseDouble(day3TempStr);
 		} catch (NumberFormatException e) {
-    		System.err.println("Error: Invalid input for Day 3 temperature. Default temperature will be used.");
+    		System.err.println("Error: Invalid input for Day 3 temperature. Default temperature will be used.\n");
     		// Setting a default value
     		day3TempPrimitive = 20.0;
 		}
@@ -56,10 +56,23 @@ class TemperatureAnalyzer{ // This should be default modifier
 		day3TempWrapper = Double.valueOf(day3TempPrimitive);
 
 
+		System.out.println("--- Temperature Analysis ---\n");
+		System.out.println("Parsed Day 1 Temp (primitive double): " + day1TempPrimitive);
+		System.out.println("Parsed Day 2 Temp (primitive double): " + day2TempPrimitive+"\n");
 
-
-
-
+		if (day1TempWrapper.compareTo(day2TempWrapper) == 0) // error if not enclosed in ()
+		{
+			System.out.println("Day 1 (" + day1TempPrimitive + "°C) was the same temperature as Day 2 (" + day2TempPrimitive + "°C).");
+		} else if (day1TempWrapper.compareTo(day2TempWrapper) < 0){
+			System.out.println("Day 1 (" + day1TempPrimitive + "°C) was cooler than Day 2 (" + day2TempPrimitive + "°C).");
+		} else {
+			System.out.println("Day 1 (" + day1TempPrimitive + "°C) was warmer than Day 2 (" + day2TempPrimitive + "°C).");
+		}
+		/*
+		compareTo() returns a negative integer if the calling object (day1TempWrapper) is less than the argument (day2TempWrapper).
+		compareTo() returns zero if the calling object is equal to the argument.
+		compareTo() returns a positive integer if the calling object is greater than the argument.
+		*/
 
 	} 
 
