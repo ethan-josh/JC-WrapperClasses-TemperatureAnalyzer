@@ -48,6 +48,13 @@ class TemperatureAnalyzer{ // This should be default modifier
     		day3TempPrimitive = 20.0;
 		}
 
+		// Wrapper Object creation
+		Double day1TempWrapper, day2TempWrapper, day3TempWrapper;
+
+		day1TempWrapper = Double.valueOf(day1TempPrimitive);
+		day2TempWrapper = Double.valueOf(day2TempPrimitive);
+		day3TempWrapper = Double.valueOf(day3TempPrimitive);
+
 
 
 
