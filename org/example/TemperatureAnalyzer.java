@@ -80,25 +80,15 @@ class TemperatureAnalyzer{ // This should be default modifier
 		System.out.println("Extracted Day 1 Temp (primitive float from Double wrapper): " + day1Float);
 		System.out.println("Extracted Day 2 Temp (primitive int from Double wrapper, truncated): " + day2Int + "\n");
 
+		double maxTemp = Double.max(Double.max(day1TempWrapper.doubleValue(), day2TempWrapper.doubleValue()), day3TempWrapper.doubleValue());
+		/*
+		After some research, it turns out the specialized static method .max can only take 2 parameters
+		However, I can embed the output of a max method as a parameter into a max method
+		min and max are static method so it returns a double value, not a static method or reference
+		Since I am nesting method calls, the most inner nest gets evaluated first. Kind of how recurssion works
+		*/
+		System.out.println("The highest temperature recorded was: " + maxTemp + "°C");
+
 	} 
 
 }
-
-
-/*
-Enter Day 1 High Temperature (e.g., 28.5): 25.7
-Enter Day 2 High Temperature (e.g., 28.5): 28.0
-Enter Day 3 High Temperature (e.g., 28.5): 25.7
-
---- Temperature Analysis ---
-
-Parsed Day 1 Temp (primitive double): 25.7
-Parsed Day 2 Temp (primitive double): 28.0
-
-Day 1 (25.7°C) was cooler than Day 2 (28.0°C).
-
-Extracted Day 1 Temp (primitive float from Double wrapper): 25.7
-Extracted Day 2 Temp (primitive int from Double wrapper, truncated): 28
-
-The highest temperature recorded was: 28.0°C
-*/
